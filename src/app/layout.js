@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={iranSansX.variable}>
         <Navbar/>
         {children}
