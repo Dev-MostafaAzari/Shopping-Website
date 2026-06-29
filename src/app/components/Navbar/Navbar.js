@@ -11,7 +11,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
     return (
-        <div className="h-[100px] flex justify-evenly items-center bg-white">
+        <div className="h-[100px] hidden justify-evenly items-center bg-white md:flex ">
             <div className="">
                 <Image src={Logo} width={50} height={50} alt="Logo" className="rounded-[50%]"/>
             </div>
