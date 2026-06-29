@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { iranSansX } from "./fonts";
+import BottomNavigation from "./components/BottomNavigation/BottomNavigation";
 
 config.autoAddCss = false;
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={iranSansX.variable}>
         <Navbar/>
+        <BottomNavigation/>
         {children}
       </body>
     </html>
