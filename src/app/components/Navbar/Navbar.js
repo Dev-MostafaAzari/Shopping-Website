@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <>
             <div className="h-[100px] flex justify-evenly items-center bg-white ">
-                <div className="block sm:hidden">
+                <div className="block">
                     <Image src={Logo} width={50} height={50} alt="Logo" className="rounded-[50%]" />
                 </div>
                 <div className="">
