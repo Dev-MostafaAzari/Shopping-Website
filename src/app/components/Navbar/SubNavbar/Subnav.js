@@ -29,7 +29,7 @@ const SubNavbar = () => {
             <div><Link href={"/"} className="hover:text-gray-800">خانه</Link></div>
             <div onMouseEnter={()=>{setIsHovered(true)}}>
                 <Link href={"/"} className="hover:text-gray-800">دسته بندی ها</Link>
-                <motion.div onMouseLeave={()=>{setIsHovered(false)}} variants={motionVariant} initial={"initial"} animate={isHovered ? "animate" : "initial"} transition={"transition"} className={`absolute bg-white w-[150px] h-[200px] flex-col gap-[10px] mt-[20px] p-[10px] border-solid border-gray-300 border-[1px] rounded-lg shadow-gray-400 shadow-sm`}>
+                <motion.div onMouseLeave={()=>{setIsHovered(false)}} variants={motionVariant} initial={"initial"} animate={isHovered ? "animate" : "initial"} transition={"transition"} className={`absolute bg-white z-[999] w-[150px] h-[200px] flex-col gap-[10px] mt-[20px] p-[10px] border-solid border-gray-300 border-[1px] rounded-lg shadow-gray-400 shadow-sm`}>
                     <div className="w-full"><Link className="hover:text-gray-800" href={"/"}>لباس</Link></div>
                     <div className="w-full"><Link className="hover:text-gray-800" href={"/"}>لباس</Link></div>
                     <div className="w-full"><Link className="hover:text-gray-800" href={"/"}>لباس</Link></div>
