@@ -21,12 +21,13 @@ const motionVariant = {
 }
 
 const SubNavbar = () => {
-    
+    // states for SubNavbar category menu
     const [isHovered , setIsHovered] = useState(false);
     const [isSection , setIsSection] = useState(false);
     const [clothes , setClothes]  = useState(false);
     const [digital , setDigital]  = useState(false);
     const [valubles , setValubles]  = useState(false);
+
     const ClothesSec = () =>{
         setDigital(false);
         setValubles(false);
@@ -42,18 +43,23 @@ const SubNavbar = () => {
         setValubles(false);
         setClothes(false);
     };
+    const ResetAllSec = ()=>{
+        setDigital(false);
+        setValubles(false);
+        setClothes(false);
+    }
 
     return (
         <div className="w-screen h-[100px] hidden md:flex justify-right items-center gap-[70px] pr-[100px] text-gray-600 relative">
             <div><Link href={"/"} className="hover:text-gray-800">خانه</Link></div>
             <div onMouseEnter={()=>{setIsHovered(true)}}>
                 <Link href={"/"} className="hover:text-gray-800">دسته بندی ها</Link>
-                <motion.div onMouseLeave={()=>{setIsHovered(false);setIsSection(false);}} variants={motionVariant} initial={"initial"} animate={isHovered ? "animate" : "initial"} transition={"transition"} className={`absolute bg-white z-[999] flex-col gap-[10px] mt-[20px] p-[10px] border-solid border-gray-300 border-[1px] rounded-lg shadow-gray-400 shadow-sm`}>
+                <motion.div onMouseLeave={()=>{setIsHovered(false);setIsSection(false);ResetAllSec();}} variants={motionVariant} initial={"initial"} animate={isHovered ? "animate" : "initial"} transition={"transition"} className={`absolute bg-white z-[999] flex-col gap-[10px] mt-[20px] p-[10px] border-solid border-gray-300 border-[1px] rounded-lg shadow-gray-400 shadow-sm`}>
                     <motion.div className="flex flex-row gap-[10px]">
                         <motion.div className="flex flex-col gap-[10px]">
-                            <div onMouseEnter={()=>{ClothesSec();setIsSection(true)}} className="w-full"><Link className="hover:text-gray-800" href={"/"}>پوشاک</Link></div>
-                            <div onMouseEnter={()=>{DigitalSec();setIsSection(true)}} className="w-full"><Link className="hover:text-gray-800" href={"/"}>دیجیتال</Link></div>
-                            <div onMouseEnter={()=>{ValublesSec();setIsSection(true)}} className="w-full"><Link className="hover:text-gray-800" href={"/"}>زیورآلات</Link></div>
+                            <motion.div onMouseEnter={()=>{ClothesSec();setIsSection(true)}} transition={{duration:0.1}} animate={clothes ? {borderBottom:"1px solid gray"} : {borderBottom:"none"}} className={`w-full`}><Link className="hover:text-gray-800" href={"/"}>پوشاک</Link></motion.div>
+                            <motion.div onMouseEnter={()=>{DigitalSec();setIsSection(true)}} transition={{duration:0.1}} animate={digital ? {borderBottom:"1px solid gray"} : {borderBottom:"none"}} className={`w-full`}><Link className="hover:text-gray-800" href={"/"}>دیجیتال</Link></motion.div>
+                            <motion.div onMouseEnter={()=>{ValublesSec();setIsSection(true)}} transition={{duration:0.1}} animate={valubles ? {borderBottom:"1px solid gray"} : {borderBottom:"none"}} className={`w-full`}><Link className="hover:text-gray-800" href={"/"}>زیورآلات</Link></motion.div>
                         </motion.div>
                         <motion.div className={`w-[200px] justify-center h-full ${isSection ? "flex" : "hidden"}`}>
                             {clothes ? (<div className="flex flex-col gap-[10px]">
