@@ -12,7 +12,7 @@ const HomeMainSlider = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCounter((prev) => (prev + 1) % allSlides);
-        }, 2000);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);
@@ -35,10 +35,10 @@ const HomeMainSlider = () => {
                 </motion.div>
             </motion.div>
             <div className="absolute w-full h-[10px] bottom-[0px] z-[999] flex justify-center items-center gap-[5px] pb-[5px]">
-                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===0 ? {background:"black",width:"25px",borderRadius:"30%"} : {background:"lightgray"} }></motion.div>
-                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===1 ? {background:"black",width:"25px",borderRadius:"30%"} : {background:"lightgray"} }></motion.div>
-                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===2 ? {background:"black",width:"25px",borderRadius:"30%"} : {background:"lightgray"} }></motion.div>
-                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===3 ? {background:"black",width:"25px",borderRadius:"30%"} : {background:"lightgray"} }></motion.div>
+                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===0 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===1 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===2 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===3 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
             </div>
         </div>
     );
