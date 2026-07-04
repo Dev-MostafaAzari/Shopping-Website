@@ -46,38 +46,38 @@ const HomeMainSlider = () => {
                 </div>
             </div>
             <div className="w-full flex-1 grid grid-cols-4 gap-[5px] text-gray-600">
-                <div className="flex">
-                    <div className="flex-1 flex justify-end items-center text-[10px] md:text-[15px] lg:text-[20px] text-black">
+                <div className="flex justify-center items-center gap-[5px] lg:gap-[10px]">
+                    <div className=" flex justify-end items-center text-[10px] md:text-[15px] lg:text-[30px] text-black">
                         <FontAwesomeIcon icon={faHeadphones}/>
                     </div>
-                    <div className="flex-3 flex flex-col gap justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
+                    <div className="flex flex-col gap justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
                         <p>پشتیبانی 24 ساعته</p>
                         <p className="text-gray-500">پاسخگوی شما </p>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="flex-1 flex justify-end items-center text-[10px] md:text-[15px] lg:text-[20px] text-black">
+                <div className="flex justify-center items-center gap-[5px] lg:gap-[10px]">
+                    <div className="flex justify-end items-center text-[10px] md:text-[15px] lg:text-[30px] text-black">
                         <FontAwesomeIcon icon={faCreditCard}/>
                     </div>
-                    <div className="flex-3 flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
+                    <div className="flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
                         <p>پرداخت امن</p>
                         <p className="text-gray-500">درگاه های معتبر</p>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="flex-1 flex justify-end items-center text-[10px] md:text-[15px] lg:text-[20px] text-black">
+                <div className="flex justify-center items-center gap-[5px] lg:gap-[10px]">
+                    <div className="flex justify-end items-center text-[10px] md:text-[15px] lg:text-[30px] text-black">
                         <FontAwesomeIcon icon={faRefresh}/>
                     </div>
-                    <div className="flex-3 flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
+                    <div className=" flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
                         <p>ضمانت بازگشت کالا </p>
                         <p className="text-gray-500">تا 7 روز</p>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="flex-1 flex justify-end items-center text-[10px] md:text-[15px] lg:text-[20px] text-black">
+                <div className="flex justify-center items-center gap-[5px] lg:gap-[10px]">
+                    <div className="flex justify-end items-center text-[10px] md:text-[15px] lg:text-[30px] text-black">
                         <FontAwesomeIcon icon={faTruck}/>
                     </div>
-                    <div className="flex-3 flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
+                    <div className="flex flex-col justify-center items-center text-[7px] md:text-[15px] lg:text-[20px]">
                         <p>ارسال سریع</p>
                         <p className="text-gray-500">به سراسر کشور</p>
                     </div>
