@@ -15,7 +15,7 @@ const ProductCategory = () => {
                     <Link href={"/"} className="text-blue-400 hover:text-blue-600">نمایش همه</Link>
                 </div>
             </div>
-            <div className="w-full grid grid-cols-3 lg:grid-cols-6">
+            <div className="w-full grid grid-cols-3 lg:grid-cols-6 text-gray-500 ">
                 <div  className="rounded-sm flex  justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
                         <Image src={bag} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
