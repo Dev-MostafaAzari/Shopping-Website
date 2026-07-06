@@ -5,31 +5,53 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "react-use";
-
+import jacket from "@/app/assets/jacket2.png";
+import shoes from "@/app/assets/shoes2.png";
+import watch from "@/app/assets/watch.png";
+import headphone from "@/app/assets/headPhone.png";
+import Image from "next/image";
 
 
 const HomeMainSlider = () => {
     const {width , height}= useWindowSize();
     const allSlides = 4;
-    const [counter , setCounter] = useState(0);
-    useEffect(() => {
+    const [counter , setCounter] = useState(3);
+    /* useEffect(() => {
         const interval = setInterval(() => {
             setCounter((prev) => (prev + 1) % allSlides);
         }, 3000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, []); */
     
 
     return (
-        <div className="w-full h-[40%] flex flex-col">
-            <div className="w-full overflow-x-hidden flex-3 bg-gray-500 relative">
+        <div className="w-full flex flex-col gap-[10px]">
+            <div className="w-full overflow-x-hidden  bg-gray-500 relative">
                 <motion.div className="w-[400%] h-full bg-red-400 flex flex-row-reverse" animate={{translateX:counter*width}} transition={{duration:0.5}} >
                     <motion.div className="w-[100vw] h-full">
-                        item1
+                        <div className="w-full h-full flex gap-[10px] justify-between bg-blue-300">
+                            <div className="flex-1 flex justify-center items-canter">
+                                <Image src={headphone} alt="headphone" quality={100} className="w-[150px] h-auto md:w-[300px] lg:w-[400px]" />  
+                            </div>
+                            <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
+                                <h1 className=" md:text-[25px]">هدفون مخصوص گیمینگ</h1>
+                                <p className="text-[12px] text-gray-500">برای بهترین ها</p>
+                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer">همین حالا خرید کن</button>
+                            </div>
+                        </div>
                     </motion.div>
                     <motion.div className="w-[100vw] h-full">
-                        item2
+                            <div className="w-full h-full flex gap-[10px] justify-between bg-amber-100">
+                                <div className="flex-1 flex justify-center items-canter">
+                                    <Image src={watch} alt="watch" quality={100} className="w-[150px] h-[100%] md:w-[300px] lg:w-[400px]" />  
+                                </div>
+                                <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
+                                    <h1 className=" md:text-[25px]">ساعت مردانه</h1>
+                                    <p className="text-[12px] text-gray-500">شیک و با استایل</p>
+                                    <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer">همین حالا خرید کن</button>
+                                </div>
+                            </div>
                     </motion.div>
                     <motion.div className="w-[100vw] h-full">
                         item3
@@ -39,13 +61,13 @@ const HomeMainSlider = () => {
                     </motion.div>
                 </motion.div>
                 <div className="absolute w-full h-[10px] bottom-[0px] z-[999] flex justify-center items-center gap-[5px] pb-[5px]">
-                    <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===0 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
-                    <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===1 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
-                    <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===2 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
-                    <motion.div className="w-[10px] h-[10px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===3 ? {background:"black",width:"25px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                    <motion.div className="w-[5px] h-[5px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===0 ? {background:"black",width:"15px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                    <motion.div className="w-[5px] h-[5px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===1 ? {background:"black",width:"15px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                    <motion.div className="w-[5px] h-[5px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===2 ? {background:"black",width:"15px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
+                    <motion.div className="w-[5px] h-[5px] rounded-[50%]" initial={{background:"lightgray"}} animate={counter===3 ? {background:"black",width:"15px",borderRadius:"40%"} : {background:"lightgray"} }></motion.div>
                 </div>
             </div>
-            <div className="w-full flex-1 grid grid-cols-4 gap-[5px] text-gray-600">
+            <div className="w-full  grid grid-cols-4 gap-[5px] text-gray-600">
                 <div className="flex justify-center items-center gap-[5px] lg:gap-[10px]">
                     <div className=" flex justify-end items-center text-[10px] md:text-[15px] lg:text-[30px] text-black">
                         <FontAwesomeIcon icon={faHeadphones}/>
