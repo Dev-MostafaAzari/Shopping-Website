@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import phone from "@/app/assets/phone.png";
-import bag from "@/app/assets/bag2.png";
-import headphone from "@/app/assets/headphone.png";
-import shoe from "@/app/assets/shoe2.png";
+import phone from "@/app/assets/phone2.png";
+import bag from "@/app/assets/bag.png";
+import headphone from "@/app/assets/headPhone.png";
+import shoe from "@/app/assets/shoes.png";
 import jacket from "@/app/assets/jacket.png";
+import watch from "@/app/assets/watch2.png";
 
 const ProductCategory = () => {
     return (
@@ -42,7 +43,7 @@ const ProductCategory = () => {
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={phone} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={watch} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
                         <span>ساعت</span>
                     </Link>
                 </div>
