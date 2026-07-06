@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import phone from "@/app/assets/phone2.png";
 import bag from "@/app/assets/bag.png";
-import headphone from "@/app/assets/headPhone.png";
+import headphone from "@/app/assets/headPhone2.png";
 import shoe from "@/app/assets/shoes.png";
 import jacket from "@/app/assets/jacket.png";
 import watch from "@/app/assets/watch2.png";
