@@ -16,40 +16,40 @@ const ProductCategory = () => {
                     <Link href={"/"} className="text-blue-400 hover:text-blue-600">نمایش همه</Link>
                 </div>
             </div>
-            <div className="w-full grid grid-cols-3 lg:grid-cols-6 text-gray-500 ">
+            <div className="w-full grid grid-cols-3 lg:grid-cols-6 text-gray-500 text-xs gap-[10px] lg:gap-[0px] lg:text-sm ">
                 <div  className="rounded-sm flex  justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={bag} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={bag} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>کیف و کوله</span>
                     </Link>
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={jacket} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={jacket} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>لباس</span>
                     </Link>
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={shoe} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={shoe} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>کفش</span>
                     </Link>
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={headphone} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={headphone} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>هدفون</span>
                     </Link>
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={watch} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={watch} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>ساعت</span>
                     </Link>
                 </div>
                 <div  className="rounded-sm flex justify-center items-center overflow-hidden">
                     <Link href={"/"} className="flex flex-col text-center gap-[5px]">
-                        <Image src={phone} alt="Bag" width={100} height={75} className="h-[100px] bg-gray-200 rounded"/>
+                        <Image src={phone} alt="Bag" width={100} height={75} className="h-[100px] bg-slate-200 rounded"/>
                         <span>موبایل</span>
                     </Link>
                 </div>
