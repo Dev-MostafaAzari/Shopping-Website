@@ -34,7 +34,7 @@ const HomeMainSlider = () => {
                             <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
                                 <h1 className=" md:text-[25px] lg:text-[40px]">هدفون مخصوص گیمینگ</h1>
                                 <p className="text-[12px]  md:text-[18px] lg:text-[25px]  text-gray-500">برای بهترین ها</p>
-                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
+                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] lg:p-[20px] lg:text-[20px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
                             </div>
                         </div>
                     </motion.div>
@@ -46,7 +46,7 @@ const HomeMainSlider = () => {
                                 <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
                                     <h1 className=" md:text-[25px] lg:text-[40px]">ساعت مردانه</h1>
                                     <p className="text-[12px]  md:text-[18px] lg:text-[25px]  text-gray-500">شیک و با استایل</p>
-                                    <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
+                                    <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] lg:p-[20px] lg:text-[20px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
                                 </div>
                             </div>
                     </motion.div>
@@ -58,7 +58,7 @@ const HomeMainSlider = () => {
                             <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
                                 <h1 className=" md:text-[25px] lg:text-[40px]">ژاکت مردانه</h1>
                                 <p className="text-[12px]  md:text-[18px] lg:text-[25px]  text-stone-300">یک انتخاب خوب برای سخت پسندان</p>
-                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
+                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] lg:p-[20px] lg:text-[20px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
                             </div>
                         </div>
                     </motion.div>
@@ -70,7 +70,7 @@ const HomeMainSlider = () => {
                             <div className="flex-1 flex flex-col justify-center items-center gap-[10px]">
                                 <h1 className=" md:text-[25px] lg:text-[40px]">کتانی مردانه </h1>
                                 <p className="text-[12px] md:text-[18px] lg:text-[25px] text-stone-300">محکم و با استایل</p>
-                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
+                                <button className=" border-solid border-1px border-black rounded-xl bg-blue-800 text-white text-[12px] p-[10px] lg:p-[20px] lg:text-[20px] cursor-pointer hover:text-amber-200">همین حالا خرید کن</button>
                             </div>
                         </div>
                     </motion.div>
