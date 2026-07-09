@@ -50,7 +50,7 @@ const SubNavbar = () => {
     }
 
     return (
-        <div className="w-screen h-[100px] hidden md:flex justify-right items-center gap-[70px] pr-[100px] text-gray-600 relative">
+        <div className="w-screen h-[100px] hidden lg:flex justify-right items-center gap-[70px] pr-[100px] text-gray-600 relative">
             <div><Link href={"/"} className="hover:text-gray-800">خانه</Link></div>
             <div onMouseEnter={()=>{setIsHovered(true)}}>
                 <Link href={"/"} className="hover:text-gray-800">دسته بندی ها</Link>
