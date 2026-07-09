@@ -1,5 +1,6 @@
 import HomeMainSlider from "./components/HomeMainSlider/HomeMainSlider";
 import ProductCategory from "./components/ProductsCategory/ProductCategory";
+import SpecialOffer from "./components/SpecialOffer/SpecialOffer";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -9,9 +10,10 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="w-screen overflow-x-hidden ovarflow-y-scroll md:h-[calc(100vh-200px)] h-[calc(100vh-164px)] flex flex-col gap-[20px] ">
+    <div className="w-screen overflow-x-hidden ovarflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-200px)] h-[calc(100vh-164px)] flex flex-col gap-[20px] ">
       <HomeMainSlider/>
       <ProductCategory/>
+      <SpecialOffer/>
     </div>
   );
 }
