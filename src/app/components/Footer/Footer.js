@@ -32,9 +32,9 @@ const Footer = () => {
                             <p>دسترسی سریع</p>
                         </div>
                         <div className="flex flex-col justify-center items-right text-[12px] md:text-[16px] text-gray-300 gap-[5px]">
-                            <Link className="hover:text-gray-200 w-auto" href={"/"}>خانه</Link>
-                            <Link className="hover:text-gray-200 w-auto" href={"/"}>درباره ما</Link>
-                            <Link className="hover:text-gray-200 w-auto" href={"/"}>وبلاگ</Link>
+                            <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>خانه</Link></div>
+                            <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>درباره ما</Link></div>
+                            <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>وبلاگ</Link></div>
                         </div>
                     </div>
                 </div>
@@ -43,10 +43,10 @@ const Footer = () => {
                         <p>راهنمای خرید</p>
                     </div>
                     <div className="flex flex-col justify-center items-right text-[12px] md:text-[16px] text-gray-300 gap-[5px]">
-                        <Link className="hover:text-gray-200" href={"/"}>سوالات متداول</Link>
-                        <Link className="hover:text-gray-200" href={"/"}>روش های پرداخت</Link>
-                        <Link className="hover:text-gray-200" href={"/"}>شرایط بازگست کالا</Link>
-                        <Link className="hover:text-gray-200" href={"/"}>حریم خصوصی</Link>
+                        <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>سوالات متداول</Link></div>
+                        <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>روش های پرداخت</Link></div>
+                        <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>شرایط بازگست کالا</Link></div>
+                        <div className="flex justify-right items-center"><Link className="hover:text-gray-200" href={"/"}>حریم خصوصی</Link></div>
                     </div>
                 </div>
                 <div className="flex justify-right items-start xl:items-center">
