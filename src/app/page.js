@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/Footer";
 import HomeMainSlider from "./components/HomeMainSlider/HomeMainSlider";
 import ProductCategory from "./components/ProductsCategory/ProductCategory";
 import SpecialOffer from "./components/SpecialOffer/SpecialOffer";
@@ -10,10 +11,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="w-screen overflow-x-hidden ovarflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-200px)] h-[calc(100vh-164px)] flex flex-col gap-[20px] ">
+    <div className="w-screen overflow-x-hidden ovarflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)] flex flex-col gap-[20px] ">
       <HomeMainSlider/>
       <ProductCategory/>
       <SpecialOffer/>
+      <Footer/>
     </div>
   );
 }
