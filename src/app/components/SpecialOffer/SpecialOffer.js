@@ -8,6 +8,7 @@ import jacket from "@/app/assets/jacket.png";
 import shoes from "@/app/assets/shoes2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import CountDown from "../CountDown/CountDown";
 
 const SpecialOffer = () => {
     return (
@@ -63,8 +64,8 @@ const SpecialOffer = () => {
                                 <p>روی ساعت های مچی</p>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-center items-center">
-                            <p>12/20/30</p>
+                        <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px]">
+                            <div><CountDown/></div>
                             <button style={{transition:"all 0.4s"}} className="p-[10px] lg:p-[15px] bg-white text-black rounded-sm cursor-pointer hover:bg-violet-900 hover:text-white">مشاهده و خرید</button>
                         </div>
                     </div>
