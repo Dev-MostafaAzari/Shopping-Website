@@ -1,7 +1,5 @@
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AllProducts from "../components/AllProducts/AllProducts";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import ProductsFilter from "../components/ProductsFilter/ProductsFilter";
 
 
