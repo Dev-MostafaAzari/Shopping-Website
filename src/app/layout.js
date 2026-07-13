@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { iranSansX } from "./fonts";
 import BottomNavigation from "./components/BottomNavigation/BottomNavigation";
+import ReduxProvider from "./redux/provider";
 
 config.autoAddCss = false;
 
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={iranSansX.variable}>
-        <Navbar/>
-        <BottomNavigation/>
-        {children}
+        <ReduxProvider>
+          <Navbar/>
+          <BottomNavigation/>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
