@@ -25,16 +25,19 @@ const ProductsFilter = () => {
 
                 </div>
                 <div className="w-full h-full flex  justify-right items-center lg:hidden">
-                    <button onClick={()=>{dispatch(toggleFilter());setSelectedCategory(null)}} className="mr-[5px] text-gray-600 font-thin text-[12px] border-[1px] border-solid border-gray-300 p-[5px] rounded-sm"><FontAwesomeIcon icon={faFilter}/>فیلترها</button>
-                    <motion.div initial={{opacity:0,display:"none"}} animate={filterShow ? {opacity:1,display:"flex"} : {opacity:0,display:"none"}} transition={{duration:0.3}} className="w-full h-full absolute top-[0] flex flex-col justify-start items-right bg-stone-300 overflow-y-scroll scrollbar-none z-[996] gap-[10px]">
+                    <button onClick={()=>{dispatch(toggleFilter());setSelectedCategory(null)}} className="mr-[5px] text-gray-600 font-thin text-[12px] border-[1px] border-solid border-gray-300 p-[5px] rounded-sm cursor-pointer"><FontAwesomeIcon icon={faFilter}/>فیلترها</button>
+                    <motion.div initial={{opacity:0,display:"none"}} animate={filterShow ? {opacity:1,display:"flex"} : {opacity:0,display:"none"}} transition={{duration:0.3}} className="w-full h-full absolute top-[0] flex flex-col justify-start items-right bg-white overflow-y-scroll scrollbar-none z-[996] gap-[10px]">
                         <div className="w-full flex justify-right items-center p-[10px]">
-                            <button className="text-gray-500 text-[20px]" onClick={()=>{dispatch(toggleFilter())}}><FontAwesomeIcon icon={faClose}/></button>
+                            <button className="text-gray-500 text-[20px] cursor-pointer" onClick={()=>{dispatch(toggleFilter())}}><FontAwesomeIcon icon={faClose}/></button>
                         </div>
                         <div className="w-full flex justify-right items-center pr-[10px]">
                             <div className="w-full flex flex-col justify-start items-right text-[16px] gap-[30px]">
+                                <div className="flex justify-right items-center text-slate-700 text-[20px]">
+                                    <p>فیلترها</p>
+                                </div>
                                 {categoryList.map((item)=>(
                                     <div className="flex flex-col justify-start items-right text-[16px] gap-[20px]" key={item.id}>
-                                        <div onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})} className="w-full flex justify-right items-center">
+                                        <div onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})} className="w-full flex justify-right items-center cursor-pointer">
                                             <div className="w-[50%] flex justify-between items-center">
                                                 <Link className="text-slate-700" href={"/"}>{item.title}</Link>
                                                 <motion.span initial={{rotate:0}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:0.3}}><FontAwesomeIcon icon={faArrowLeft}/></motion.span>
