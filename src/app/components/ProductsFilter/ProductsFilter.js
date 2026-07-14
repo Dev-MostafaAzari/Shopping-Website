@@ -21,8 +21,29 @@ const ProductsFilter = () => {
     return (
         <>
             <div className="w-full h-full">
-                <div className="w-full h-full hidden lg:flex">
-
+                <div className="w-full h-full hidden lg:flex p-[10px]">
+                    <div className="w-full h-full flex flex-col items-center gap-[20px] shadow-sm shadow-zinc-400 rounded-md">
+                        <div className="w-full flex justify-right items-center p-[10px] text-[20px] text-slate-700">
+                            <p>فیلترها</p>
+                        </div>
+                        <div className="w-[80%] h-full flex flex-col justify-start items-center gap-[30px] p-[10px]">
+                            {categoryList.map((item)=>(
+                                <div key={item.id} className="w-full flex flex-col justify-center items-right">
+                                    <div className="w-full flex justify-between items-center cursor-pointer shadow-md shadow-zinc-400 p-[10px] rounded-xl" onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})}>
+                                        <Link className="text-slate-600 hover:text-slate-900 cursor-pointer" href={"/"}>{item.title}</Link>
+                                        <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faArrowLeft}/></motion.span>
+                                    </div>
+                                    <motion.div  className="w-full grid grid-cols-1 xl:grid-cols-2 gap-[10px] p-[10px] overflow-hidden" initial={{height:"0px"}} animate={selectedCategory === item.id ? {height:"auto"} : {height:"0px"}} transition={{ease:"easeInOut",duration:0.1}}>  
+                                        {item.category.map((value,index)=>(
+                                            <motion.div key={index*Math.floor(Math.random()*1000000)} initial={{display:"none"}} animate={selectedCategory === item.id ? {display:"flex"} : {display:"none"}} transition={{damping:"6000",type:"spring"}} className="flex justify-center items-center">
+                                                <Link className="text-slate-500 hover:text-slate-700" href={"/"}>{value}</Link>
+                                            </motion.div>
+                                        ))}
+                                    </motion.div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
                 <div className="w-full h-full flex  justify-right items-center lg:hidden">
                     <button onClick={()=>{dispatch(toggleFilter());setSelectedCategory(null)}} className="mr-[5px] text-gray-600 font-thin text-[12px] border-[1px] border-solid border-gray-300 p-[5px] rounded-sm cursor-pointer"><FontAwesomeIcon icon={faFilter}/>فیلترها</button>
