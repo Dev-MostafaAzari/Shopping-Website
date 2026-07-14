@@ -1,6 +1,6 @@
 "use client";
 
-import { faArrowLeft, faClose, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleLeft, faAngleLeft, faClose, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -31,7 +31,7 @@ const ProductsFilter = () => {
                                 <div key={item.id} className="w-full flex flex-col justify-center items-right">
                                     <div className="w-full flex justify-between items-center cursor-pointer shadow-md shadow-zinc-400 p-[10px] rounded-xl" onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})}>
                                         <Link className="text-slate-600 hover:text-slate-900 cursor-pointer" href={"/"}>{item.title}</Link>
-                                        <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faArrowLeft}/></motion.span>
+                                        <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faAngleDoubleLeft}/></motion.span>
                                     </div>
                                     <motion.div  className="w-full grid grid-cols-1 xl:grid-cols-2 gap-[10px] p-[10px] overflow-hidden" initial={{height:"0px"}} animate={selectedCategory === item.id ? {height:"auto"} : {height:"0px"}} transition={{ease:"easeInOut",duration:0.1}}>  
                                         {item.category.map((value,index)=>(
@@ -61,7 +61,7 @@ const ProductsFilter = () => {
                                         <div onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})} className="w-full flex justify-right items-center cursor-pointer">
                                             <div className="w-[50%] flex justify-between items-center">
                                                 <Link className="text-slate-700" href={"/"}>{item.title}</Link>
-                                                <motion.span initial={{rotate:0}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:0.3}}><FontAwesomeIcon icon={faArrowLeft}/></motion.span>
+                                                <motion.span initial={{rotate:0}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:0.3}}><FontAwesomeIcon icon={faAngleLeft}/></motion.span>
                                             </div>
                                         </div>
                                         <motion.div initial={{display:"none",height:"0px"}} animate={selectedCategory === item.id ? {display:"grid",height:"auto"} : {display:"none",height:"0px"}} transition={{duration:0}} className="w-full grid grid-cols-4 gap-[5px]">
