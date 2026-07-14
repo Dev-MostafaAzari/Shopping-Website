@@ -1,7 +1,17 @@
-import productsApi from "@/app/services/axios";
 
 
-const AllProducts = () => {
+
+const AllProducts = async () => {
+    const getProducts = async () =>{
+        const response = await fetch(`${process.env.Next_Products_Api_Url}/products`);
+        if(!response.ok){
+            console.log("error")
+        }
+        const data = await response.json();
+        return data;
+    }
+    const data = await getProducts();
+    console.log(data.products);
     return (
         <div className="w-full h-full">
             <div className="w-full h-full p-[10px]">
