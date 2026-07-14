@@ -10,7 +10,7 @@ const Products = () => {
                     <div className="flex-1">
                         <ProductsFilter/>
                     </div>
-                    <div className="flex-5 lg:flex-3">
+                    <div className="flex-5 lg:flex-3 xl:flex-4">
                         <AllProducts/>
                     </div>
                 </div>
