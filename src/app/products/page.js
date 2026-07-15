@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import AllProducts from "../components/AllProducts/AllProducts";
 import ProductsFilter from "../components/ProductsFilter/ProductsFilter";
+import ProductsSkeleton from "../components/ProductsSkeleton/ProductsSkeleton";
 
 
 const Products = () => {
@@ -12,7 +13,7 @@ const Products = () => {
                         <ProductsFilter/>
                     </div>
                     <div className="flex-5 lg:flex-3 xl:flex-4">
-                        <Suspense fallback={<>loading</>}>
+                        <Suspense fallback={<ProductsSkeleton/>}>
                             <AllProducts/>
                         </Suspense>
                     </div>
