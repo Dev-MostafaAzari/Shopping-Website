@@ -11,7 +11,7 @@ const AllProducts = async () => {
         return data;
     }
     const data = await getProducts();
-    console.log(data.products);
+
     return (
         <div className="w-full h-full">
             <div className="w-full h-full p-[10px]">
