@@ -17,7 +17,7 @@ const ProductsSkeleton = () =>{
                     <div className="w-full flex justify-right items-center p-[10px]">
                         <h1 className="text-slate-600 text-[20px]">لیست محصولات</h1>
                     </div>
-                    <div className="w-full h-full overflow-y-scroll scrollbar-none grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 auto-rows-[350px] gap-[10px]">
+                    <div className="w-full h-full overflow-y-scroll scrollbar-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 auto-rows-[350px] gap-[10px]">
                         {data.map((item)=>{
                             return (
                                 <div key={item} className="h-full w-full p-[10px]">
