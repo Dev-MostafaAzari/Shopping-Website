@@ -9,7 +9,7 @@ import { toggleFilter } from "@/app/redux/features/filterSlice";
 import Link from "next/link";
 
 const ProductsFilter = () => {
-    const {filterShow} = useSelector(state => state.filteProduct);
+    const {filterShow} = useSelector(state => state.filterProduct);
     const dispatch = useDispatch();
     const [selectedCategory , setSelectedCategory]=useState(null);
     const categoryList = [
