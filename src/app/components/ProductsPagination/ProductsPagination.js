@@ -16,7 +16,7 @@ const ProductsPagination = ({ProductsLength}) => {
         const getData = async ()=>{
             const length = await ProductsLength;
             setLength(length);
-            setPages(length/15);
+            setPages(Math.ceil(length/15));
         }
         getData();
     })
