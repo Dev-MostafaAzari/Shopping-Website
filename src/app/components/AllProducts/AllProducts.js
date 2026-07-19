@@ -8,10 +8,9 @@ import ProductsSkeleton from "../ProductsSkeleton/ProductsSkeleton";
 
 
 const AllProducts = () => {
-    const { skip } = useSelector((state) => state.AllProducts);
-    const [data, setData] = useState();
-    const [loading, setLoading] = useState(true);
-    console.log(process.env.NEXT_PUBLIC_PRODUCTS_API_URL)
+    const { skip } = useSelector((state) => state.AllProducts); // skip value will determin the number of skiped products
+    const [data, setData] = useState();         // this state contains the api response
+    const [loading, setLoading] = useState(true);   // loading (productsSkeleton) status
     useEffect(() => {
         const getProducts = async () => {
             const response = await fetch(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/products?limit=15&skip=${skip}`)
@@ -22,7 +21,7 @@ const AllProducts = () => {
                 });
         }
         getProducts();
-    }, [skip])
+    }, [skip])  // useEffect will reActivate on Skip change value
 
     return (
         <div className="w-full h-full">

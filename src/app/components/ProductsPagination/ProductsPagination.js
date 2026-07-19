@@ -9,18 +9,17 @@ import { nextPage , prevPage , setPage } from "@/app/redux/features/allProducsSl
 
 const ProductsPagination = ({ProductsLength}) => {
     const dispatch = useDispatch();
-    const [length , setLength] = useState(null);
-    const [pages,setPages] = useState(null);
-    const [activePage,setActivePage] = useState(0);
+    const [length , setLength] = useState(null);    //Number of Products
+    const [pages,setPages] = useState(null);        // Number of pages
+    const [activePage,setActivePage] = useState(0); // active page
     useEffect(()=>{
         const getData = async ()=>{
-            const length = await ProductsLength;
-            setLength(length);
-            setPages(Math.ceil(length/15));
+            const length = await ProductsLength;    // products length given as a props
+            setLength(length);                  
+            setPages(Math.ceil(length/15)); // create one page for every 15 product
         }
         getData();
     })
-    console.log(length);
 
 
     return (

@@ -8,13 +8,13 @@ const AllProductsSlice = createSlice({
     initialState , 
     reducers : {
         nextPage : (state) => {
-            state.skip += 15;
+            state.skip += 15;   // products limit on every page is 15
         },
         prevPage : (state) => {
             state.skip -=15
         },
         setPage : (state,action)=>{
-            state.skip = action.payload * 15;
+            state.skip = action.payload * 15;   // for selecting page number directily
         }
     }
 })
