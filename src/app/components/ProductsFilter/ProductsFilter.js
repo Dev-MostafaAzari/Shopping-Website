@@ -9,14 +9,15 @@ import { toggleFilter } from "@/app/redux/features/filterSlice";
 import Link from "next/link";
 
 const ProductsFilter = () => {
-    const {filterShow} = useSelector(state => state.filterProduct);
+    const {filterShow} = useSelector(state => state.filterProduct); // boolian
     const dispatch = useDispatch();
-    const [selectedCategory , setSelectedCategory]=useState(null);
+    const [selectedCategory , setSelectedCategory]=useState(null); // determine the selected category
     const categoryList = [
         {title:"لباس",id:1,category:["ژاکت مردانه","تیشرت","پیراهن","کاپشن"]}
         ,{title:"ساعت مردانه",id:2,category:["ساعت دیجیتال","ساعت مردانه","ساعت زنانه"]}
         ,{title:"کفش",id:3,category:["کتانی ورزشی","کفش مجلسی","کفش زنانه","دمپایی","کفش مردانه","کفش کوهنوردی"]}
-        ,{title:"گوشی",id:4,category:["آیفون","سامسونگ","شیامی","سونی"]}];
+        ,{title:"گوشی",id:4,category:["آیفون","سامسونگ","شیامی","سونی"]}
+    ];
 
     return (
         <>

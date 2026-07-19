@@ -5,7 +5,7 @@ import { useInterval } from "react-use";
 
 
 const CountDown = () => {
-    const [time , setTime] = useState(10000);
+    const [time , setTime] = useState(10000); //10000seconds
     const [hour , setHour] = useState(Math.floor(time/3600));
     const [minute , setMinute] = useState(Math.floor((time - (hour*3600))/60));
     const [seconds , setSeconds] = useState(Math.floor(((time - (hour*3600))-(minute*60))/60));
