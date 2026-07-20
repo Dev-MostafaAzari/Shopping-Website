@@ -38,7 +38,7 @@ const AllProducts = () => {
                                     <>
                                         {data?.products.map((item) => (
                                             <div key={item.id} className="w-full h-full p-[10px] rounded-md shadow-zinc-400 shadow-md hover:shadow-lg relative">
-                                                <Link href={"/"} className="w-full h-full flex flex-col justify-center items-center gap-[10px] p-[10px]">
+                                                <Link href={`/products/${item.id}`} className="w-full h-full flex flex-col justify-center items-center gap-[10px] p-[10px]">
                                                     <div className="w-full h-full flex justify-center">
                                                         <Image src={`${item.images[0]}`} width={100} height={100} quality={100} alt={`${item.brand}`} className="w-[250px] h-auto" />
                                                     </div>
