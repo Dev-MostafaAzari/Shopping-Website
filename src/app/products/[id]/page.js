@@ -5,6 +5,9 @@ import { useUpdate } from "react-use";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useWindowSize } from "react-use";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const SingleProduct = ({params}) => {
     const update = useUpdate();
@@ -26,12 +29,12 @@ const SingleProduct = ({params}) => {
     return (
         <div className="w-screen overflow-x-hidden overflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">
             <div className="w-full h-full p-[10px]">
-                <div className="w-full h-full flex flex-col ">
+                <div className="w-full h-full flex flex-col">
                     <div className="flex-3">
-                        <div className="w-full h-full flex flex-col lg:flex-row p-[10px] gap-[10px]">
+                        <div className="w-full h-full flex flex-col lg:flex-row p-[10px] gap-[20px]">
                             <div className="flex-1">
                                 <div className="w-full h-full flex flex-col gap-[5px]">
-                                    <div className="flex-3 flex justify-center items-center">
+                                    <div className="flex-3 flex justify-center items-center relative">
                                         <div className="w-[200px] lg:w-[400px] xl:w-[500px] h-full overflow-hidden">
                                             <motion.div  animate={width >=1280 ? {translateX:slide*500} : (width >=1024 ? {translateX:slide*400} : {translateX:slide*200})} transition={{duration:0.5}} className={`h-full w-[600px] lg:w-[1200px] xl:w-[1500px] flex`}>
                                                 {product?.images.map((item,index)=>(
@@ -41,6 +44,7 @@ const SingleProduct = ({params}) => {
                                                 ))}
                                             </motion.div>
                                         </div>
+                                        <button className="absolute top-[10px] left-[10px] text-gray-400 text-[16px] cursor-pointer"><FontAwesomeIcon icon={faHeart}/></button> {/* reminder : add to favorite in progress ... */}
                                     </div>
                                     <div className="flex-1">
                                         <div className="w-full h-full flex justify-center items-center gap-[10px] ">
@@ -53,8 +57,25 @@ const SingleProduct = ({params}) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex-1 bg-zinc-400">
-
+                            <div className="flex-1">
+                                <div className="w-full h-full flex flex-col gap-[10px]">
+                                    <div className="w-full flex justify-right items-center text-zinc-800 text-[20px]">
+                                        <h1>{product?.title}</h1>
+                                    </div>
+                                    <div className="w-full flex justify-right items-center gap-[5px] text-[12px]">
+                                        <FontAwesomeIcon className="text-amber-400" icon={faStar}/>
+                                        <span className="text-gray-500">{product?.rating}</span>
+                                    </div>
+                                    <div className="w-full flex justify-right items-center text-zinc-700 text-[20px]">
+                                        <p>{product?.price}تومان</p>
+                                    </div>
+                                    <div className="w-full flex justify-right items-center text-pretty text-[16px] text-zinc-400" dir="ltr">
+                                        <p>{product?.description}</p>
+                                    </div>
+                                    <div className="w-full h-full flex flex-col gap-[10px]">
+                                        {/* select number and add to card button sections */}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
