@@ -8,6 +8,7 @@ import { useWindowSize } from "react-use";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import QuantitySelector from "@/app/components/QuantitySelector/QuantitySelector";
 
 const SingleProduct = ({params}) => {
     const update = useUpdate();
@@ -15,6 +16,7 @@ const SingleProduct = ({params}) => {
     const [product , setProduct] = useState(null);
     const [loading , setLoading] = useState(true);
     const [slide,setSlide] = useState(0);
+    const [activeTab , setActiveTap]=useState(0);
     useEffect(()=>{
         const GetProduct= async ()=>{
             const id = await params;
@@ -72,15 +74,36 @@ const SingleProduct = ({params}) => {
                                     <div className="w-full flex justify-right items-center text-pretty text-[16px] text-zinc-400" dir="ltr">
                                         <p>{product?.description}</p>
                                     </div>
-                                    <div className="w-full h-full flex flex-col gap-[10px]">
-                                        {/* select number and add to card button sections */}
+                                    <div className="w-full h-full flex gap-[10px] justify-between p-[10px]">
+                                        <div className="flex p-[10px] items-center">
+                                            <button className="text-stone-50 text-[16px] border-1px rounded-xl bg-sky-700 p-[10px]">افزودن به سبدخرید</button>
+                                        </div>
+                                        <div className="flex p-[10px] items-center ">
+                                            <QuantitySelector/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 bg-blue-300">
-
+                    <div className="flex-1">
+                        <div className="w-full flex flex-col gap-[10px]">
+                            <div className="flex w-full justify-evenly items-center">
+                                <motion.button onClick={()=>{setActiveTap(0)}} className={`p-[10px] ${activeTab===0 ? "text-gray-700":"text-gray-400"} relative`}>جزئیات محصول 
+                                    <motion.div initial={{width:"0px",height:"2px"}} animate={activeTab === 0 ? {width:"100%",height:"2px"} : null} transition={{direction:0.5}} className="absolute bottom-[0px] right-[0px] bg-blue-600 rounded-xl"/>
+                                </motion.button>
+                                <motion.button onClick={()=>{setActiveTap(1)}} className={`p-[10px] ${activeTab===1 ? "text-gray-700":"text-gray-400"} relative`}>مشخصات 
+                                    <motion.div initial={{width:"0px",height:"2px"}} animate={activeTab === 1 ? {width:"100%",height:"2px"} : null} transition={{direction:0.5}} className="absolute bottom-[0px] right-[0px] bg-blue-600 rounded-xl"/>
+                                </motion.button>
+                                <motion.button onClick={()=>{setActiveTap(2)}} className={`p-[10px] ${activeTab===2 ? "text-gray-700":"text-gray-400"} relative`}>نظرات 
+                                    <span>{`(${product?.reviews.length})`}</span> <motion.div initial={{width:"0px",height:"2px"}} animate={activeTab === 2 ? {width:"100%",height:"2px"} : null} transition={{direction:0.5}} className="absolute bottom-[0px] right-[0px] bg-blue-600 rounded-xl"/>
+                                </motion.button>
+                            </div>
+                            <hr className="text-gray-300"/>
+                                
+                            
+                                            
+                        </div>
                     </div>
                 </div>
             </div>
