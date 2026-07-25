@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import QuantitySelector from "@/app/components/QuantitySelector/QuantitySelector";
+import SingleProductSkeleton from "@/app/components/SingleProductSkeleton/SingleProductSkeleton";
 
 const SingleProduct = ({params}) => {
     const update = useUpdate();
@@ -32,6 +33,8 @@ const SingleProduct = ({params}) => {
     return (
         <div className="w-screen overflow-x-hidden overflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">
             <div className="w-full h-full p-[10px]">
+                {loading ? <SingleProductSkeleton/> 
+                :
                 <div className="w-full h-full flex flex-col">
                     <div className="flex-3">
                         <div className="w-full h-full flex flex-col lg:flex-row p-[10px] gap-[20px]">
@@ -152,6 +155,7 @@ const SingleProduct = ({params}) => {
                         </div>
                     </div>
                 </div>
+                }
             </div>
         </div>
     );
