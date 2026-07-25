@@ -13,11 +13,11 @@ import SingleProductSkeleton from "@/app/components/SingleProductSkeleton/Single
 
 const SingleProduct = ({params}) => {
     const update = useUpdate();
-    const {width , height} = useWindowSize();
-    const [product , setProduct] = useState(null);
-    const [loading , setLoading] = useState(true);
-    const [slide,setSlide] = useState(0);
-    const [activeTab , setActiveTap]=useState(0);
+    const {width , height} = useWindowSize();   //screen width&height
+    const [product , setProduct] = useState(null);  //selectedProduct
+    const [loading , setLoading] = useState(true);  //loading state
+    const [slide,setSlide] = useState(0);           //productImagesSlide
+    const [activeTab , setActiveTap]=useState(0);   //Tabs
     useEffect(()=>{
         const GetProduct= async ()=>{
             const id = await params;
@@ -29,7 +29,6 @@ const SingleProduct = ({params}) => {
         }
         GetProduct();
     },[])
-    console.log(product?.images.length)
     return (
         <div className="w-screen overflow-x-hidden overflow-y-scroll lg:scrollbar-none md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">
             <div className="w-full h-full p-[10px]">
@@ -38,6 +37,7 @@ const SingleProduct = ({params}) => {
                 <div className="w-full h-full flex flex-col">
                     <div className="flex-3">
                         <div className="w-full h-full flex flex-col lg:flex-row p-[10px] gap-[20px]">
+                            {/* productImages */}
                             <div className="flex-1">
                                 <div className="w-full h-full flex flex-col gap-[5px]">
                                     <div className="flex-3 flex justify-center items-center relative">
@@ -91,7 +91,7 @@ const SingleProduct = ({params}) => {
                             </div>
                         </div>
                     </div>
-                    {/* taps */}
+                    {/* tabs */}
                     <div className="flex-1">
                         <div className="w-full flex flex-col gap-[10px]">
                             <div className="flex w-full justify-evenly items-center">
@@ -106,6 +106,7 @@ const SingleProduct = ({params}) => {
                                 </motion.button>
                             </div>
                             <hr className="text-gray-300"/>
+                            {/* tabsContent */}
                             <div className={`w-full p-[10px] ${activeTab===0 || activeTab===1 ? "flex flex-col" : "hidden"}`}>
                                 <div className="w-full p-[10px]">
                                     {activeTab===0 ? <div className="w-full flex justify-right items-center gap-[5px]"><p className="text-zinc-800">نام محصول</p>:<p className="text-gray-500">{product?.title}</p></div>
