@@ -3,12 +3,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import CircleLoading from "../CircleLoading/CircleLoading";
 
 const SearchInput = () => {
     const [value , setValue] = useState(null);
     const [isSeaching , setIsSearching] = useState(true);
     const [result , setResult] = useState(null);
-    const [loading , setLoading] = useState(false);
+    const [loading , setLoading] = useState(true);
     /* useEffect(()=>{
         const SearchData = async () => {
             setLoading(true);
@@ -29,6 +30,7 @@ const SearchInput = () => {
             {isSeaching ?
                 <div className="w-full h-[200px] bg-white border-[1px] border-gray-400 border-solid rounded-md p-[10px] overflow-scroll scrollbar-none flex flex-col gap-[5px] absolute mt-[50px] z-[994]">
                     {/* if loading ? loading component (circle loading) : result items map  */}
+                    {loading ? <CircleLoading/> : null}
                 </div>
                 :
                 null
