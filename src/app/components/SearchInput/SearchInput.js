@@ -11,12 +11,12 @@ import Link from "next/link";
 
 const SearchInput = () => {
     const ref = useRef();
-    const [value , setValue] = useState(null);
+    const [value , setValue] = useState(null);  // stores the input value 
     const [isSeaching , setIsSearching] = useState(false);
-    const [result , setResult] = useState(null);
-    const [loading , setLoading] = useState(false);
+    const [result , setResult] = useState(null);    // contains the api response
+    const [loading , setLoading] = useState(false); // loading state
     const [error , setError] = useState(false);
-    useClickAway(ref , ()=>{
+    useClickAway(ref , ()=>{        //  the react-use hook for handling the isSearching state
         setValue(null);
         setIsSearching(false);
     })
@@ -28,7 +28,6 @@ const SearchInput = () => {
             .then(data => setResult(data))
             .catch(()=>{setError(true)})
             .finally(()=>{setLoading(false)})
-            console.log(result);
         };
         SearchData();
     },[value])
