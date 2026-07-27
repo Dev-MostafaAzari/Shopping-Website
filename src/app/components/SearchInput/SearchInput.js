@@ -40,16 +40,15 @@ const SearchInput = () => {
             </div>
             {isSeaching ?
                 <div ref={ref} className="w-full h-[200px] bg-white border-[1px] border-gray-400 border-solid rounded-md p-[10px] overflow-scroll scrollbar-none flex flex-col gap-[5px] absolute mt-[50px] z-[994]">
-                    {/* if loading ? loading component (circle loading) : result items map  */}
                     {loading ? <CircleLoading/>
                         :
                         result.products.length !==0 ? 
                         result?.products.map((item)=>(
-                            <Link onClick={()=>{setIsSearching(false)}} key={item?.id} href={`/products/${item?.id}`} className="w-full flex justify-between p-[5px]">
+                            <Link onClick={()=>{setIsSearching(false)}} key={item?.id} href={`/products/${item?.id}`} className="w-full flex justify-between p-[5px] shadow-gray-400 shadow-sm rounded-md">
                                 <Image src={item?.images[0]} alt="resultImg" width={100} height={100} quality={100} className="w-[50px] h-auto md:w-[75px] lg:w-[100px]"/>
-                                <div className="flex gap-[5px] text-[10px] text-gray-600 md:text-[16px] lg:text-[20px]">
+                                <div className="flex flex-2 flex-col justify-center items-center gap-[5px] text-[10px] text-gray-600 md:text-[16px]">
                                     <p>{item?.title}</p>
-                                    <p>{item?.price}</p>
+                                    <p>{item?.price}تومان</p>
                                 </div>
                             </Link>
                         ))
