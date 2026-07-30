@@ -1,6 +1,6 @@
 "use client";
 
-import { faAngleDoubleLeft, faAngleLeft, faClose, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faClose, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -32,7 +32,7 @@ const ProductsFilter = () => {
                                 <div key={item.id} className="w-full flex flex-col justify-center items-right">
                                     <div className="w-full flex justify-between items-center cursor-pointer shadow-md shadow-zinc-400 p-[10px] rounded-xl lg:text-[12px] xl:text-[16px]" onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})}>
                                         <Link className="text-slate-600 hover:text-slate-900 cursor-pointer" href={"/"}>{item.title}</Link>
-                                        <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faAngleDoubleLeft}/></motion.span>
+                                        <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faAngleLeft}/></motion.span>
                                     </div>
                                     <motion.div  className="w-full grid grid-cols-1 xl:grid-cols-2 gap-[10px] p-[10px] overflow-hidden lg:text-[12px]" initial={{height:"0px"}} animate={selectedCategory === item.id ? {height:"auto"} : {height:"0px"}} transition={{ease:"easeInOut",duration:0.1}}>  
                                         {item.category.map((value,index)=>(
