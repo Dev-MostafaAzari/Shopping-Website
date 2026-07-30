@@ -39,16 +39,16 @@ const SubNavbar = () => {
                 <Link onMouseOver={()=>{setIsHovered(true)}} href={"/products"} className="hover:text-gray-800">دسته بندی ها</Link>
                 <motion.div variants={motionVariant} initial={"initial"} animate={isHovered ? "animate" : "initial"} transition={"transition"} className={`absolute w-[80%] h-[500px] flex gap-[10px] mt-[20px] p-[10px] border-solid border-gray-300 border-[1px] bg-white z-[9999] rounded-xl`}>
                     <div className="flex flex-col flex-1 justify-center gap-[20px] pr-[30px] gap text-gray-500 text-[20px]">
-                        <div><Link onMouseEnter={()=>{setSelectedCategory("clothes")}} href={"/"} className="hover:text-gray-700">پوشاک</Link></div>
-                        <div><Link onMouseEnter={()=>{setSelectedCategory("beauty")}}  href={"/"} className="hover:text-gray-700">آرایشی و بهداشتی</Link></div>
-                        <div><Link onMouseEnter={()=>{setSelectedCategory("kitchen")}} href={"/"} className="hover:text-gray-700">وسایل پخت و پز</Link></div>
-                        <div><Link onMouseEnter={()=>{setSelectedCategory("vehicle")}} href={"/"} className="hover:text-gray-700">وسایل نقلیه</Link></div>
-                        <div><Link onMouseEnter={()=>{setSelectedCategory("digital")}} href={"/"} className="hover:text-gray-700">وسایل دیجیتال</Link></div>
+                        <div><button onMouseEnter={()=>{setSelectedCategory("clothes")}} className="hover:text-gray-700 cursor-pointer">پوشاک</button></div>
+                        <div><button onMouseEnter={()=>{setSelectedCategory("beauty")}}  className="hover:text-gray-700 cursor-pointer">آرایشی و بهداشتی</button></div>
+                        <div><button onMouseEnter={()=>{setSelectedCategory("kitchen")}} className="hover:text-gray-700 cursor-pointer">وسایل پخت و پز</button></div>
+                        <div><button onMouseEnter={()=>{setSelectedCategory("vehicle")}} className="hover:text-gray-700 cursor-pointer">وسایل نقلیه</button></div>
+                        <div><button onMouseEnter={()=>{setSelectedCategory("digital")}} className="hover:text-gray-700 cursor-pointer">وسایل دیجیتال</button></div>
                     </div>
-                    <div className="flex flex-col flex-3 gap-[20px] pr-[30px] justify-center text-[20px]">
+                    <div className="flex flex-col flex-3 gap-[20px] pr-[30px] justify-center text-[20px] text-gray-500 border-r-[1px] border-solid border-gray-500">
                         {/* first need to create new component to show category requested api result */}
                         {CategoryList.map((item)=>( 
-                            <div key={Math.floor(Math.random()*1000000)} className={`${selectedCategory === item.cate ? "block" : "hidden"}`}><Link href={"/"} className="hover:text-gray-700">{item.title}</Link></div>
+                            <div key={Math.floor(Math.random()*1000000)} className={`${selectedCategory === item.cate ? "block" : "hidden"}`}><Link href={`/products/category/${item.link}`} className="hover:text-gray-700">{item.title}</Link></div>
                         ))}
                     </div>
                 </motion.div>
