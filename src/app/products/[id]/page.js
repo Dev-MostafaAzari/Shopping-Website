@@ -21,8 +21,7 @@ const SingleProduct = ({params}) => {
     const [loading , setLoading] = useState(true);  //loading state
     const [slide,setSlide] = useState(0);           //productImagesSlide
     const [activeTab , setActiveTap]=useState(0);   //Tabs
-    const {favorites} = useSelector((state)=> state.FavoriteProducts);
-    console.log(favorites);
+    const {favorites} = useSelector((state)=> state.FavoriteProducts);  //favorites products
     useEffect(()=>{
         const GetProduct= async ()=>{
             const id = await params;
@@ -55,7 +54,7 @@ const SingleProduct = ({params}) => {
                                                 ))}
                                             </motion.div>
                                         </div>
-                                        <motion.button initial={{color:"#99A1AF"}} animate={favorites.includes(product)? {color:"#C40C0C",scale:1.3} : {color:"#99A1AF",scale:1}} transition={{type:"spring"}} onClick={()=>{favorites.includes(product) ? dispatch(removeFavorite(product)):dispatch(AddFavorite(product))}} className="absolute top-[10px] left-[10px] xl:left-[20px] 2xl:left-[50px] text-[16px] cursor-pointer"><FontAwesomeIcon icon={favorites.includes(product)? Heartfull : HeartEmpty}/></motion.button>
+                                        <motion.button  initial={{color:"#99A1AF"}} animate={favorites.some(item => item.id === product.id)? {color:"#C40C0C",scale:1.3} : {color:"#99A1AF",scale:1}} transition={{type:"spring"}} onClick={()=>{favorites.some((item)=> item.id === product.id) ? dispatch(removeFavorite(product)):dispatch(AddFavorite(product))}} className="absolute top-[10px] left-[10px] xl:left-[20px] 2xl:left-[50px] text-[16px] cursor-pointer"><FontAwesomeIcon icon={favorites.some((item)=>item.id === product.id)? Heartfull : HeartEmpty}/></motion.button>
                                     </div>
                                     <div className="flex-1">
                                         <div className="w-full h-full flex justify-center items-center gap-[10px] overflow-hidden">
