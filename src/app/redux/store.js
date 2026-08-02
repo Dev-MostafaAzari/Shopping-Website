@@ -10,3 +10,9 @@ export const store = configureStore({
         FavoriteProducts : FavoritesReducer,
     }
 });
+
+//localStorage
+store.subscribe(()=>{
+    const {favorites} = store.getState().FavoriteProducts;
+    localStorage.setItem("products",JSON.stringify({favorites}));
+})
