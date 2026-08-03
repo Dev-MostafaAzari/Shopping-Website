@@ -23,7 +23,7 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:flex sm:hidden  gap-[10px] text-gray-600 text-[20px]">
                     <Link href={"/"} className="hover:text-gray-700"><FontAwesomeIcon icon={faShoppingBag} /></Link>
-                    <Link href={"/"} className="hover:text-gray-700"><FontAwesomeIcon icon={faHeart} /></Link>
+                    <Link href={"/profile/favorites"} className="hover:text-gray-700"><FontAwesomeIcon icon={faHeart} /></Link>
                     <Link href={"/"} className="hover:text-gray-700" ><FontAwesomeIcon icon={faUser} /></Link>
                 </div>
             </div>
