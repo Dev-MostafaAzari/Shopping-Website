@@ -12,7 +12,7 @@ const Pagination = () => {
     useEffect(()=>{ //reading the localStorage Value On Component Mount to Prevent Hydration Error
             const {favorites} = JSON.parse(localStorage.getItem("products") || "{}")
             setFavorites(favorites)
-            setPages(favorites.length)
+            setPages(favorites?.length)
         },[])
     return (
         <div className={`items-center gap-[5px] p-[10px] ${pages <=0 ? "hidden" : "flex"}`} dir="ltr">
