@@ -9,7 +9,7 @@ import {useInterval} from "react-use";
 import jacket from "@/app/assets/jacket2.png";
 import shoes from "@/app/assets/shoes2.png";
 import watch from "@/app/assets/watch.png";
-import headphone from "@/app/assets/headPhone.png";
+import headphone from "@/app/assets/headphone.png";
 import Image from "next/image";
 
 
