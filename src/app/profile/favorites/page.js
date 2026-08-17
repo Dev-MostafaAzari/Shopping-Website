@@ -42,7 +42,7 @@ const Favorites = () => {
                             </div>
                         </div>
                     ))}
-                    {favorites?.length === 0 || null ? <div className="w-full h-full flex justify-center items-center text-gray-600 lg:text-[20px] xl:text-[22px]">بخش علاقه مندی ها خالی می باشد</div> : null}
+                    {favorites?.length === 0 || favorites?.length === undefined ? <div className="w-full h-full flex justify-center items-center text-gray-600 lg:text-[20px] xl:text-[22px]">بخش علاقه مندی ها خالی می باشد</div> : null}
                     <div className="w-full flex-1 flex justify-center items-center">
                         <Pagination/>
                     </div>
