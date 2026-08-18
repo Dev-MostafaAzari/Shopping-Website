@@ -28,13 +28,17 @@ const AuthUser = createSlice({
     extraReducers:(builder)=>{
         builder.addCase(loginUser.pending,(state)=>{
             state.loading = true;
+            state.userLogedIn = false;
         }),
         builder.addCase(loginUser.fulfilled,(state,action)=>{
             state.userData = action.payload;
             state.loading = false;
+            state.userLogedIn = true;
         }),
         builder.addCase(loginUser.rejected,(state,action)=>{
             state.loading = false;
+            state.userLogedIn = false;
+            state.errorMessage = action.error.message;
         })
     }
 })
