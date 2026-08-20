@@ -5,25 +5,22 @@ import axios from "axios";
 const initialState = {
     userLogedIn:false,
     loading:false,
-    userData:null,
+    loginCode:null,
     errorMessage:""
 }
 
 const loginUser = createAsyncThunk("userAuth/loginUser",async({username,password})=>{
-    try{
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/auth/login`,{username,password});
-        console.log(response);
-        return response.data;
-    }catch(error){
-        console.log(error.response?.data)
-    }
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/auth/login`,{username,password});
+    console.log(response);
+    return response.data.accessToken;
 })
-
 const AuthUser = createSlice({
     name:"userAuth",
     initialState,
     reducers:{
-
+        userLogOut : (state)=>{
+            state.userLogedIn = false;
+        }
     },
     extraReducers:(builder)=>{
         builder.addCase(loginUser.pending,(state)=>{
@@ -31,7 +28,7 @@ const AuthUser = createSlice({
             state.userLogedIn = false;
         }),
         builder.addCase(loginUser.fulfilled,(state,action)=>{
-            state.userData = action.payload;
+            state.loginCode = action.payload;
             state.loading = false;
             state.userLogedIn = true;
         }),
@@ -45,4 +42,5 @@ const AuthUser = createSlice({
 
 
 export default AuthUser.reducer;
+export const {userLogOut} = AuthUser.actions;
 export {loginUser};
