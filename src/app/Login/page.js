@@ -17,7 +17,7 @@ const LoginPage = () => {
 
 
     useEffect(()=>{
-        if(userLogedIn){
+        if(userLogedIn === true){
             setTimeout(()=>{
                 router.push("/");
             },3000)
