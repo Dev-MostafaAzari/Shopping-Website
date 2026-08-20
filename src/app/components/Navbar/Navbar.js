@@ -8,18 +8,16 @@ import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import SubNavbar from "./SubNavbar/Subnav";
 import SearchInput from "../SearchInput/SearchInput";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { getCurrentUser } from "@/app/redux/features/authenticationSlice";
 
 
 
 
 const Navbar = () => {
     const {userLogedIn} = useSelector(state => state.AuthenticationUser);
-    const [userState , setUserState]= useState(null)
-    useEffect(()=>{
-        setUserState(userLogedIn)
-    },[userLogedIn])
+
     return (
         <>
             <div className="h-[100px] flex justify-evenly items-center bg-white ">
@@ -31,8 +29,8 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:flex sm:hidden  gap-[10px] text-gray-600 text-[20px]">
                     <Link href={"/"} className="hover:text-gray-700"><FontAwesomeIcon icon={faShoppingBag} /></Link>
-                    <Link href={userState ? "/profile/favorites" : "/Login"} className="hover:text-gray-700"><FontAwesomeIcon icon={faHeart} /></Link>
-                    <Link href={userState ? "/profile" : "/Login"} className="hover:text-gray-700" ><FontAwesomeIcon icon={faUser} /></Link>
+                    <Link href={userLogedIn ? "/profile/favorites" : "/Login"} className="hover:text-gray-700"><FontAwesomeIcon icon={faHeart} /></Link>
+                    <Link href={userLogedIn ? "/profile" : "/Login"} className="hover:text-gray-700" ><FontAwesomeIcon icon={faUser} /></Link>
                 </div>
             </div>
             <SubNavbar/>
