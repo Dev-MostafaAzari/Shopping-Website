@@ -6,20 +6,23 @@ const initialState = {
     userLogedIn:false,
     loading:false,
     loginCode:null,
-    errorMessage:""
+    errorMessage:"",
 }
 
 const loginUser = createAsyncThunk("userAuth/loginUser",async({username,password})=>{
     const response = await axios.post(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/auth/login`,{username,password});
-    console.log(response);
     return response.data.accessToken;
-})
+});
+
 const AuthUser = createSlice({
     name:"userAuth",
     initialState,
     reducers:{
         userLogOut : (state)=>{
             state.userLogedIn = false;
+        },
+        userLogIn : (state)=>{
+            state.userLogedIn = true;
         }
     },
     extraReducers:(builder)=>{
@@ -36,8 +39,9 @@ const AuthUser = createSlice({
             state.loading = false;
             state.userLogedIn = false;
             state.errorMessage = action.error.message;
-        })
-    }
+        })  
+    },
+    
 })
 
 
