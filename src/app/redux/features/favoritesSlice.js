@@ -1,7 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const loadData = ()=>{  // need to load data cuz it will be null on login user 
+    if(typeof window === "undefined")
+    {
+        return [];
+    }
+    const {favorites} = JSON.parse(localStorage.getItem("products") || "{}");
+    return favorites;
+}
+const data = loadData();
+
 const initialState = {
-    favorites :[], 
+    favorites :data, 
     start:0,
     end:9,
     activePage:0,
