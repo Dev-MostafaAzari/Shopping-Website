@@ -18,11 +18,11 @@ const SpecialOffer = () => {
                     <div className="w-full flex flex-col items-center justify-center md:flex-4">
                         <div className="w-full flex items-center justify-between lg:text-[20px] p-[10px]">
                             <h2>پیشنهاد شگفت انگیز</h2>
-                            <Link href={"/"} className="text-blue-400 hover:text-blue-600">نمایش همه</Link>
+                            <Link href={"/products"} className="text-blue-400 hover:text-blue-600">نمایش همه</Link>
                         </div>
                         <div className="w-full grid grid-cols-2 md:grid-cols-4">
                             <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] p-[10px]">
-                                <Image src={headphone} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] bg-sky-100 rounded-sm"/>
+                                <Image src={headphone} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] bg-sky-100 rounded-sm"/>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">هدفون بیسیم سونی</p>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">2500000تومان</p>
                                 <div className="w-full flex justify-right items-center">
@@ -30,7 +30,7 @@ const SpecialOffer = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] p-[10px] ">
-                                <Image src={jacket} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] bg-sky-100 rounded-sm"/>
+                                <Image src={jacket} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] bg-sky-100 rounded-sm"/>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">ژاکت مردانه</p>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">2500000تومان</p>
                                 <div className="w-full flex justify-right items-center">
@@ -38,7 +38,7 @@ const SpecialOffer = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] p-[10px] ">
-                                <Image src={watch} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] bg-sky-100 rounded-sm"/>
+                                <Image src={watch} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] bg-sky-100 rounded-sm"/>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">ساعت مچی مردانه</p>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">2500000تومان</p>
                                 <div className="w-full flex justify-right items-center">
@@ -46,7 +46,7 @@ const SpecialOffer = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] p-[10px] ">
-                                <Image src={shoes} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] bg-sky-100 rounded-sm"/>
+                                <Image src={shoes} quality={100} alt="headphone" className="w-[150px] h-[150px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] bg-sky-100 rounded-sm"/>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">کتانی مردانه</p>
                                 <p className="text-[12px] lg:text-[16px] xl:text-[20px]">2500000تومان</p>
                                 <div className="w-full flex justify-right items-center">
@@ -66,7 +66,7 @@ const SpecialOffer = () => {
                         </div>
                         <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px]">
                             <div><CountDown/></div>
-                            <button style={{transition:"all 0.4s"}} className="p-[10px] lg:p-[15px] bg-white text-black rounded-sm cursor-pointer hover:bg-violet-900 hover:text-white">مشاهده و خرید</button>
+                            <Link href={"/products/category/mens-watches"} style={{transition:"all 0.4s"}} className="p-[10px] lg:p-[15px] bg-white text-black rounded-sm cursor-pointer hover:bg-violet-900 hover:text-white">مشاهده و خرید</Link>
                         </div>
                     </div>
                 </div>
