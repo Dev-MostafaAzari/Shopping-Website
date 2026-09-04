@@ -1,12 +1,18 @@
+"use client";
 import { faFileArchive, faHeart, faHouse } from "@fortawesome/free-regular-svg-icons";
 import { faLocationPin, faSignOut} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { userLogOut } from "../redux/features/authenticationSlice";
+import { useRouter } from "next/navigation";
 
 
 
-const UserProfile = async () => {
+const UserProfile = () => {
+    const dispatch = useDispatch();
+    const router = useRouter();
     return (
         <div className="w-screen md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">
             <div className="w-full h-full flex flex-col md:flex-row">
@@ -25,7 +31,7 @@ const UserProfile = async () => {
                             <Link href={"/"} className="flex gap-[5px] items-center"><FontAwesomeIcon icon={faLocationPin}/><span>آدرس ها</span></Link>
                         </div>
                         <div className="p-[10px] w-full flex justify-right items-center xl:w-[80%]">
-                            <button className="flex gap-[5px] items-center cursor-pointer hover:text-red-600"><FontAwesomeIcon icon={faSignOut}/><span>خروج</span></button>
+                            <button onClick={()=>{dispatch(userLogOut());router.push("/")}} className="flex gap-[5px] items-center cursor-pointer hover:text-red-600"><FontAwesomeIcon icon={faSignOut}/><span>خروج</span></button>
                         </div>
                     </div>
                 </div>
