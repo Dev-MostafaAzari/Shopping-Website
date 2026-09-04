@@ -5,8 +5,15 @@ const loadData = ()=>{  // need to load data cuz it will be null on login user
     {
         return [];
     }
-    const {favorites} = JSON.parse(localStorage.getItem("products") || "{}");
-    return favorites;
+    const {favorites} = JSON.parse(localStorage.getItem("products"));
+    if(favorites===undefined)
+    {
+        return [];
+    }
+    else
+    {
+        return favorites;
+    }
 }
 const data = loadData();
 
