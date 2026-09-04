@@ -17,4 +17,6 @@ export const store = configureStore({
 store.subscribe(()=>{
     const {favorites} = store.getState().FavoriteProducts;
     localStorage.setItem("products",JSON.stringify({favorites}));
+    const {userLogedIn} = store.getState().AuthenticationUser;
+    localStorage.setItem("userAuth",JSON.stringify({userLogedIn}));
 })

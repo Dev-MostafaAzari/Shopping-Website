@@ -2,8 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const getUserLoginState = ()=>{
+    if(typeof window === "undefined")
+    {
+        return [];
+    }
+    const userLogedIn = JSON.parse(localStorage.getItem("userAuth"));
+    if(userLogedIn === undefined || userLogedIn === null)
+    {
+        return false;
+    }else
+    {
+        return userLogedIn;
+    }
+}
+const userLoginState = getUserLoginState();
+
 const initialState = {
-    userLogedIn:false,
+    userLogedIn:userLoginState,
     loading:false,
     loginCode:null,
     errorMessage:"",
