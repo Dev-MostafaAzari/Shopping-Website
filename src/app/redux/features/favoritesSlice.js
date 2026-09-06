@@ -5,7 +5,7 @@ const loadData = ()=>{  // need to load data cuz it will be null on login user
     {
         return [];
     }
-    const {favorites} = JSON.parse(localStorage.getItem("products"));
+    const {favorites} = JSON.parse(localStorage.getItem("products") || "[]"); //if favorites was not exist return []
     if(favorites===undefined)
     {
         return [];
