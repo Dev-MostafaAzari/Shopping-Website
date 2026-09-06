@@ -10,7 +10,7 @@ const BottomNavigation = () => {
     const {userLogedIn} = useSelector((state)=> state.AuthenticationUser);
     const [userState, setUserState] = useState(null);
     useEffect(()=>{ // get userLoginStateFromLocalStorage
-        const {userLogedIn} = JSON.parse(localStorage.getItem("userAuth"));
+        const {userLogedIn} = JSON.parse(localStorage.getItem("userAuth") || false); //if userLogedIn was not exist return false
         setUserState(userLogedIn);
     },[userLogedIn])    // reRun on Slice State Chenge
     return (
