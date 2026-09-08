@@ -7,12 +7,28 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { userLogOut } from "../redux/features/authenticationSlice";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useUpdate } from "react-use";
 
 
 
 const UserProfile = () => {
     const dispatch = useDispatch();
     const router = useRouter();
+    const [userData,setUserData] = useState(null);
+    const [loading , setLoading] = useState(true);
+    const update = useUpdate();
+    useEffect(()=>{
+        const User = async ()=>{
+            fetch(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/users/1`)
+            .then(res => res.json())
+            .then(data => setUserData(data))
+            .catch(()=>{update()})
+            .finally(()=>{setLoading(false)})
+        }
+        User();
+        console.log(userData)
+    },[])
     return (
         <div className="w-screen md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">
             <div className="w-full h-full flex flex-col md:flex-row">
@@ -35,38 +51,41 @@ const UserProfile = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex-2 flex items-center p-[10px] lg:flex-4">
-                    <div className="w-full h-full flex flex-col gap-[20px] p-[10px] overflow-x-hidden overflow-y-scroll md:h-[80%] lg:scrollbar-none md:rounded-lg md:shadow-gray-300 md:shadow-md">
-                        <div className="w-full flex justify-center items-center p-[10px]">
-                            <Image src={"/"} alt={"userImg"} width={100} height={100} quality={100} className=""/>
-                        </div>
-                        <div className="w-full flex justify-right items-center text-slate-800 text-[18px] lg:text-[20px] xl:text-[22px]">
-                            <p>اطلاعات حساب</p>
-                        </div>
-                        <div className="flex flex-col pt-[10px] pr-[20px] gap-[20px] text-slate-800 text-[16px] lg:text-[18px] xl:text-[20px]">
-                            <div className="flex gap-[10px]">
-                                <span>نام کاربری</span>
-                                :
-                                <p className="text-slate-600">مصطفی آذری</p>
+                {/* need to add loading style */}
+                {loading ? null :
+                    <div className="flex-2 flex items-center p-[10px] lg:flex-4">
+                        <div className="w-full h-full flex flex-col gap-[20px] p-[10px] overflow-x-hidden overflow-y-scroll md:h-[80%] lg:scrollbar-none md:rounded-lg md:shadow-gray-300 md:shadow-md">
+                            <div className="w-full flex justify-center items-center p-[10px]">
+                                <Image src={userData?.image} alt={"userImg"} width={100} height={100} quality={100} className=""/>
                             </div>
-                            <div className="flex gap-[10px]">
-                                <span>نام</span>
-                                :
-                                <p className="text-slate-600">مصطفی</p>
+                            <div className="w-full flex justify-right items-center text-slate-800 text-[18px] lg:text-[20px] xl:text-[22px]">
+                                <p>اطلاعات حساب</p>
                             </div>
-                            <div className="flex gap-[10px]">
-                                <span>نام خانوادگی</span>
-                                :
-                                <p className="text-slate-600">آذری</p>
-                            </div>
-                            <div className="flex gap-[10px]">
-                                <span>شماره موبایل</span>
-                                :
-                                <p className="text-slate-600">0123456789</p>
+                            <div className="flex flex-col pt-[10px] pr-[20px] gap-[20px] text-slate-800 text-[16px] lg:text-[18px] xl:text-[20px]">
+                                <div className="flex gap-[10px]">
+                                    <span>نام کاربری</span>
+                                    :
+                                    <p className="text-slate-600">{userData?.firstName}</p>
+                                </div>
+                                <div className="flex gap-[10px]">
+                                    <span>نام</span>
+                                    :
+                                    <p className="text-slate-600">{userData?.firstName}</p>
+                                </div>
+                                <div className="flex gap-[10px]">
+                                    <span>نام خانوادگی</span>
+                                    :
+                                    <p className="text-slate-600">{userData?.lastName}</p>
+                                </div>
+                                <div className="flex gap-[10px]">
+                                    <span>شماره موبایل</span>
+                                    :
+                                    <p className="text-slate-600">{userData?.phone}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     );

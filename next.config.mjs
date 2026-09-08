@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.dummyjson.com",
       },
+      {
+        protocol: "https",
+        hostname: "dummyjson.com",
+      },
     ],
     qualities:[100,75]
   }
