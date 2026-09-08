@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ProductsPagination from "../ProductsPagination/ProductsPagination";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProductsSkeleton from "../ProductsSkeleton/ProductsSkeleton";
 import { useUpdate } from "react-use";
 
@@ -13,6 +13,7 @@ const AllProducts = () => {
     const [data, setData] = useState();         // this state contains the api response
     const [loading, setLoading] = useState(true);   // loading (productsSkeleton) status
     const update = useUpdate();
+    const ProductsContainer = useRef(null);
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true)
@@ -22,6 +23,7 @@ const AllProducts = () => {
             .catch(()=>{update()})
             .finally(() => {
                 setLoading(false);
+                ProductsContainer.current.scrollTo({top:0,behavior:"smooth"});
             });
         }
         getProducts();
@@ -33,7 +35,7 @@ const AllProducts = () => {
                     <div className="w-full h-full rounded-md shadow-sm shadow-zinc-400 flex p-[10px]">
                         <div className="w-full h-full flex flex-col justify-center items-right p-[10px] gap-[10px] ">
                             <h2 className="text-slate-600 text-[20px]">لیست محصولات</h2>
-                            <div className="w-full h-full overflow-y-scroll scrollbar-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 auto-rows-[350px] gap-[20px]">
+                            <div ref={ProductsContainer} className="w-full h-full overflow-y-scroll scrollbar-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 auto-rows-[350px] gap-[20px]">
                                 {loading ? <ProductsSkeleton/> : 
                                     <>
                                         {data?.products.map((item) => (
