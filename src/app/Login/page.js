@@ -33,7 +33,7 @@ const LoginPage = () => {
                         <form onSubmit={(e)=>{e.preventDefault();dispatch(loginUser({username:userName,password:password}))}} className="w-full flex flex-col justify-center items-center gap-[20px] p-[5px]" dir="ltr">
                             <input value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" className="w-full border-gray-300 border-solid border-[1px] rounded-xl p-[10px]" required placeholder="نام کاربری"/>
                             <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" className="w-full border-gray-300 border-solid border-[1px] rounded-xl p-[10px]" required placeholder="رمز عبور"/>
-                            <motion.button initial={{backgroundColor:"#3e40be"}} whileHover={{backgroundColor:"#121358"}} transition={{duration:0.3}}
+                            <motion.button disabled={userLogedIn ? true : false} initial={{backgroundColor:"#3e40be"}} whileHover={{backgroundColor:"#121358"}} transition={{duration:0.3}}
                                 className="w-[100px] cursor-pointer p-[10px] text-white rounded-xl" type="submit">ورود</motion.button>
                         </form>
                     </div>
