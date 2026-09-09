@@ -23,13 +23,13 @@ const initialState = {
     loading:false,
     loginCode:null,
     errorMessage:"",
+    loginError:false,
 }
 
 const loginUser = createAsyncThunk("userAuth/loginUser",async({username,password})=>{
     const response = await axios.post(`${process.env.NEXT_PUBLIC_PRODUCTS_API_URL}/auth/login`,{username,password});
     return response.data.accessToken;
 });
-
 const AuthUser = createSlice({
     name:"userAuth",
     initialState,
@@ -39,6 +39,9 @@ const AuthUser = createSlice({
         },
         userLogIn : (state)=>{
             state.userLogedIn = true;
+        },
+        closeError : (state)=>{
+            state.loginError = false;
         }
     },
     extraReducers:(builder)=>{
@@ -50,11 +53,13 @@ const AuthUser = createSlice({
             state.loginCode = action.payload;
             state.loading = false;
             state.userLogedIn = true;
+            state.loginError = false;
         }),
         builder.addCase(loginUser.rejected,(state,action)=>{
             state.loading = false;
             state.userLogedIn = false;
             state.errorMessage = action.error.message;
+            state.loginError = true;
         })  
     },
     
@@ -62,5 +67,5 @@ const AuthUser = createSlice({
 
 
 export default AuthUser.reducer;
-export const {userLogOut} = AuthUser.actions;
+export const {userLogOut,closeError} = AuthUser.actions;
 export {loginUser};
