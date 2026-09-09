@@ -27,7 +27,6 @@ const UserProfile = () => {
             .finally(()=>{setLoading(false)})
         }
         User();
-        console.log(userData)
     },[])
     return (
         <div className="w-screen md:h-[calc(100vh-100px)] lg:h-[calc(100vh-200px)] h-[calc(100vh-164px)]">

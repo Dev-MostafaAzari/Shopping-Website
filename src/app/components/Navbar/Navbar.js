@@ -20,7 +20,6 @@ const Navbar = () => {
         
         setUserState(userLogedIn);
     },[userLogedIn])    // reRun on Slice State Chenge
-    console.log(userState) 
     return (
         <>
             <div className="h-[100px] flex justify-evenly items-center bg-white ">
