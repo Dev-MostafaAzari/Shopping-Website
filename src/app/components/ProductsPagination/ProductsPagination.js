@@ -3,16 +3,18 @@
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nextPage , prevPage , setPage } from "@/app/redux/features/allProducsSlice";
 
 
 const ProductsPagination = ({ProductsLength}) => {
+    const {currentPage} = useSelector(state => state.AllProducts);
     const dispatch = useDispatch();
     const [length , setLength] = useState(null);    //Number of Products
     const [pages,setPages] = useState(null);        // Number of pages
     const [activePage,setActivePage] = useState(0); // active page
     useEffect(()=>{
+        setActivePage(currentPage);     // this will preventActivePageToResetOnComponentRerender
         const getData = async ()=>{
             const length = await ProductsLength;    // products length given as a props
             setLength(length);                  
