@@ -9,6 +9,7 @@ import { userLogOut } from "../redux/features/authenticationSlice";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useUpdate } from "react-use";
+import ProfileSkeleton from "../components/ProfileSkeleton/ProfileSkeleton";
 
 
 
@@ -51,7 +52,7 @@ const UserProfile = () => {
                     </div>
                 </div>
                 {/* need to add loading style */}
-                {loading ? null :
+                {loading ? <ProfileSkeleton/> :
                     <div className="flex-2 flex items-center p-[10px] lg:flex-4">
                         <div className="w-full h-full flex flex-col gap-[20px] p-[10px] overflow-x-hidden overflow-y-scroll md:h-[80%] lg:scrollbar-none md:rounded-lg md:shadow-gray-300 md:shadow-md">
                             <div className="w-full flex justify-center items-center p-[10px]">
