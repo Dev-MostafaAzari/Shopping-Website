@@ -48,7 +48,7 @@ const AllProducts = () => {
                                                         <p className="text-slate-400">{item.title}</p>
                                                     </div>
                                                     <div className="w-full flex justify-center">
-                                                        <p className="text-slate-600">150.000.000تومان</p>
+                                                        <p className="text-slate-600">{`${item.price}تومان`}</p>
                                                     </div>
                                                 </Link>
                                             </div>
