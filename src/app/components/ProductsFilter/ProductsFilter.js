@@ -13,10 +13,22 @@ const ProductsFilter = () => {
     const dispatch = useDispatch();
     const [selectedCategory , setSelectedCategory]=useState(null); // determine the selected category
     const categoryList = [
-        {title:"لباس",id:1,category:["ژاکت مردانه","تیشرت","پیراهن","کاپشن"]}
-        ,{title:"ساعت مردانه",id:2,category:["ساعت دیجیتال","ساعت مردانه","ساعت زنانه"]}
-        ,{title:"کفش",id:3,category:["کتانی ورزشی","کفش مجلسی","کفش زنانه","دمپایی","کفش مردانه","کفش کوهنوردی"]}
-        ,{title:"گوشی",id:4,category:["آیفون","سامسونگ","شیامی","سونی"]}
+        {title:"پوشاک",id:1,category:[{title:"کیف زنانه",link:"womens-bags",cate:"clothes"},{title:"لباس زنانه",link:"womens-dresses",cate:"clothes"},{title:"زیورآلات زنانه",link:"womens-jewellery",cate:"clothes"},
+            {title:"کفش زنانه",link:"womens-shoes"},{title:"لباس مردانه",link:"mens-shirts"},{title:"کفش مردانه",link:"mens-shoes"},{title:"ساعت مردانه",link:"mens-watches"}
+            ,{title:"عینک آفتابی",link:"sunglasses"}   
+        ]}
+        ,{title:"آرایشی و بهداشتی",id:2,category:[
+            {title:"مراقبت پوست",link:"skin-care"},{title:"آرایشی",link:"beauty"},{title:"عطر",link:"fragrances"}
+        ]}
+        ,{title:"وسایل آشپزخانه",id:3,category:[
+            {title:"لوازم آشپزخانه",link:"kitchen-accessories"}
+        ]}
+        ,{title:"وسیله نقلیه",id:4,category:[
+            {title:"موتورسیکلت",link:"motorcycle"},{title:"خودرو سواری",link:"vehicle"}
+        ]}
+        ,{title:"دیجیتال",id:5,category:[
+            {title:"موبایل",link:"smartphones"},{title:"تبلت",link:"tablets"},{title:"لوازم جانبی موبایل",link:"mobile-accessories"},{title:"لپ تاپ",link:"laptops"}
+        ]}
     ];
 
     return (
@@ -37,7 +49,7 @@ const ProductsFilter = () => {
                                     <motion.div  className="w-full grid grid-cols-1 xl:grid-cols-2 gap-[10px] p-[10px] overflow-hidden lg:text-[12px]" initial={{height:"0px"}} animate={selectedCategory === item.id ? {height:"auto"} : {height:"0px"}} transition={{ease:"easeInOut",duration:0.1}}>  
                                         {item.category.map((value,index)=>(
                                             <motion.div key={index*Math.floor(Math.random()*1000000)} initial={{display:"none"}} animate={selectedCategory === item.id ? {display:"flex"} : {display:"none"}} transition={{damping:"6000",type:"spring"}} className="flex justify-center items-center">
-                                                <Link className="text-slate-500 hover:text-slate-700" href={"/"}>{value}</Link>
+                                                <Link className="text-slate-500 hover:text-slate-700" href={`/products/category/${value.link}`}>{value.title}</Link>
                                             </motion.div>
                                         ))}
                                     </motion.div>
@@ -68,7 +80,7 @@ const ProductsFilter = () => {
                                         <motion.div initial={{display:"none",height:"0px"}} animate={selectedCategory === item.id ? {display:"grid",height:"auto"} : {display:"none",height:"0px"}} transition={{duration:0}} className="w-full grid grid-cols-4 gap-[5px]">
                                             {item.category.map((value,index)=>(
                                                 <div key={index*Math.floor(Math.random()*10000)} className="text-slate-600 text-[12px] flex justify-center items-center">
-                                                    <Link href={"/"}>{value}</Link>    
+                                                    <Link onClick={()=>{dispatch(toggleFilter())}} href={`/products/category/${value.link}`}>{value.title}</Link>    
                                                 </div>
                                             ))}
                                         </motion.div>
