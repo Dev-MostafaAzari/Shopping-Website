@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Shopping Website
 
-## Getting Started
+A responsive e-commerce website built with **Next.js**.
+This project was created as a practice and portfolio project to demonstrate frontend development skills, state management, API integration, authentication flow, and responsive UI design.
 
-First, run the development server:
+## ✨ Features
+
+* 🛍️ Browse and display products
+* 🔍 Product search
+* 📂 Product categories
+* 📄 Product details page
+* 🛒 Shopping cart
+* ❤️ Add and remove favorite products
+* 🔐 User authentication
+* 👤 User profile
+* 🔄 Manage product quantity
+* 📱 Fully responsive design
+* ⏳ Loading and error states
+* 🚫 Custom 404 page
+* 🌙 Modern and responsive UI
+* 🎞️ Animations with Framer Motion
+
+## 🛠️ Technologies
+
+* **Next.js**
+* **React**
+* **JavaScript**
+* **Redux Toolkit**
+* **Axios**
+* **Framer Motion**
+* **Tailwind CSS**
+* **DummyJSON API**
+
+## 📡 API
+
+This project uses the [DummyJSON API](https://dummyjson.com/) for product and user data.
+
+The API is used for:
+
+* Product data
+* Product categories
+* Product search
+* User authentication
+* User information
+
+> This project uses DummyJSON as a practice API and does not have a custom backend.
+
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Dev-MostafaAzari/Shopping-Website.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd shopwebsite
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔑 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+NEXT_PUBLIC_PRODUCTS_API_URL=https://dummyjson.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 LiveDemo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+///
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📸 Preview
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Preview](./public/preview/preview.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🎯 Project Goals
+
+The main purpose of this project was to practice and demonstrate:
+
+* Building applications with Next.js
+* Working with React components
+* Managing global state with Redux Toolkit
+* Fetching data from REST APIs
+* Handling authentication flows
+* Creating responsive layouts
+* Working with dynamic routes
+* Using Server and Client Components
+* Managing loading and error states
+* Creating reusable components
+* Deploying a Next.js application
+
+## 🔮 Future Improvements
+
+Some possible improvements for future versions:
+
+* Add a custom backend
+* Add a real database
+* Implement real payment functionality
+* Improve authentication with a custom backend
+* Add product reviews
+* Add order management
+* Add server-side data persistence
+
+## 📄 License
+
+This project is created for educational and portfolio purposes.
+
