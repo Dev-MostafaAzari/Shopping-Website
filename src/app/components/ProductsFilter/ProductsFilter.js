@@ -43,7 +43,7 @@ const ProductsFilter = () => {
                             {categoryList.map((item)=>(
                                 <div key={item.id} className="w-full flex flex-col justify-center items-right">
                                     <div className="w-full flex justify-between items-center cursor-pointer shadow-md shadow-zinc-400 p-[10px] rounded-xl lg:text-[12px] xl:text-[16px]" onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})}>
-                                        <Link className="text-slate-600 hover:text-slate-900 cursor-pointer" href={"/"}>{item.title}</Link>
+                                        <p className="text-slate-600 hover:text-slate-900 cursor-pointer">{item.title}</p>
                                         <motion.span initial={{rotate:"0"}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:"0.3"}}><FontAwesomeIcon icon={faAngleLeft}/></motion.span>
                                     </div>
                                     <motion.div  className="w-full grid grid-cols-1 xl:grid-cols-2 gap-[10px] p-[10px] overflow-hidden lg:text-[12px]" initial={{height:"0px"}} animate={selectedCategory === item.id ? {height:"auto"} : {height:"0px"}} transition={{ease:"easeInOut",duration:0.1}}>  
@@ -73,7 +73,7 @@ const ProductsFilter = () => {
                                     <div className="flex flex-col justify-start items-right text-[16px] gap-[20px]" key={item.id}>
                                         <div onClick={selectedCategory === item.id ? (()=>{setSelectedCategory(null)}) : (()=>{setSelectedCategory(item.id)})} className="w-full flex justify-right items-center cursor-pointer">
                                             <div className="w-[50%] flex justify-between items-center">
-                                                <Link className="text-slate-700" href={"/"}>{item.title}</Link>
+                                                <p className="text-slate-700">{item.title}</p>
                                                 <motion.span initial={{rotate:0}} animate={selectedCategory === item.id ? {rotate:"-90deg"} : {rotate:"0"}} transition={{duration:0.3}}><FontAwesomeIcon icon={faAngleLeft}/></motion.span>
                                             </div>
                                         </div>
