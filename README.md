@@ -84,7 +84,7 @@ NEXT_PUBLIC_PRODUCTS_API_URL=https://dummyjson.com
 
 ## 🌐 LiveDemo
 
-///
+[OnlinePreview](https://shopping-website-plum-three.vercel.app/)
 
 ## 📸 Preview
 
