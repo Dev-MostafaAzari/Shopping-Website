@@ -14,7 +14,7 @@ const BottomNavigation = () => {
         setUserState(userLogedIn);
     },[userLogedIn])    // reRun on Slice State Chenge
     return (
-        <div className="w-screen h-[65px] border-t-[1px] border-gray-400 border-solid md:hidden absolute bottom-[0px] z-[999]">
+        <div className="w-screen h-[65px] border-t-[1px] border-gray-400 border-solid md:hidden bg-white absolute bottom-[0px] z-[999]">
             <div className="w-full h-full flex justify-evenly items-center gap-[10px] text-gray-600 text-[20px] flex-row-reverse">
                 <Link href={userState ? "/profile" : "/Login"}><FontAwesomeIcon icon={faUser}/></Link>
                 <Link href={userState ? "/profile/favorites" :"/Login"}><FontAwesomeIcon icon={faHeart}/></Link>
